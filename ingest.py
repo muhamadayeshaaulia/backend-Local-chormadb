@@ -32,7 +32,7 @@ chunks = text_splitter.split_documents(semua_dokumen)
 print(f"Teks berhasil dipotong menjadi {len(chunks)} bagian (chunks).")
 
 print("\n3. Mengubah ke Vektor dan menyimpan ke ChromaDB...")
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(model_name="paraphrase-multilingual-MiniLM-L12-v2")
 
 # menyimpan hasil ke folder bernama 'chroma_db'
 db = Chroma.from_documents(chunks, embeddings, persist_directory="./chroma_db")
